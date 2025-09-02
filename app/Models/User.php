@@ -47,4 +47,14 @@ class User extends Authenticatable
             'role' => Role::class,
         ];
     }
+
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
 }
