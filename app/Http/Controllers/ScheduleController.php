@@ -20,6 +20,8 @@ class ScheduleController extends Controller
 
     public function store(Request $request)
     {
+        // return response()->json($request->all());
+
         $schedule = $request->user()->schedules()->create($request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
@@ -27,8 +29,8 @@ class ScheduleController extends Controller
             'start_time_at' => 'required|time',
             'end_time_at' => 'required|time',
             'category_id' => 'required|exists:categories,id',
-            'color' => 'nullable|string|max:7',
-            'icon' => 'nullable|string|max:255',
+            // 'color' => 'nullable|string|max:7',
+            // 'icon' => 'nullable|string|max:255',
         ]));
         return response()->json($schedule, 201);
     }
@@ -42,8 +44,8 @@ class ScheduleController extends Controller
             'start_time_at' => 'required|time',
             'end_time_at' => 'required|time',
             'category_id' => 'required|exists:categories,id',
-            'color' => 'nullable|string|max:7',
-            'icon' => 'nullable|string|max:255',
+            // 'color' => 'nullable|string|max:7',
+            // 'icon' => 'nullable|string|max:255',
         ]));
         return response()->json($schedule);
     }
