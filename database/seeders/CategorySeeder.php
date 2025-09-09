@@ -17,6 +17,7 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Personal',
                 'description' => 'Devices and gadgets',
+                'color' => '#e11d48',
             ],
             [
                 'name' => 'Business',
